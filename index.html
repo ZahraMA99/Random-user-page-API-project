@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="user-container"></div>
+      <div class="quote-container"></div>
+      <div class="content-container">
+        <div class="pokemon-container"></div>
+        <div class="meat-container"></div>
+      </div>
+      <div class="friends">
+        <h4>Friends</h4>
+        <div class="friends-container"></div>
+      </div>
+      <div class="buttons">
+        <button id="loadUserData">Load User Data</button>
+        <button id="displayUserData">Display User</button>
+      </div>
+    </div>
+
+    <script id="users-templete" type="text/x-handlebars-template">
+      <img id="profile-pic" src="{{user.image}}" />
+      <div class="user-info">
+        <div>{{user.firstName}} {{user.lastName}}</div>
+        <div>{{user.state}} {{user.city}}</div>
+      </div>
+    </script>
+
+    <script class="friends-templete" type="text/x-handlebars-template">
+      <ul>
+        {{#each data}}
+          <li> {{firstName}} {{lastName}} </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script id="pokemon-template" type="text/x-handlebars-template">
+      <div>Favorite Quote : </div>
+      <div class="quote">{{quote}}</div>
+    </script>
+
+    <script id="meat-template" type="text/x-handlebars-template">
+      <div class="meat-text">{{about}}</div>
+    </script>
+    <script id="pokemon-template" type="text/x-handlebars-template">
+      <img id="pokemon-image" src="{{poke.image}}" />
+      <div id="pokemon-text">Favorite Pokemon:
+        {{poke.name}}</div>
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
